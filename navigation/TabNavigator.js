@@ -1,6 +1,7 @@
 import React from "react";
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
+import { Icon } from '@ui-kitten/components';
 
 import Activity from "../screens/Activity";
 import AddPost from "../screens/AddPost";
@@ -10,20 +11,76 @@ import Search from "../screens/Search";
 
 const TabNavigator = createBottomTabNavigator({
     Feed: {
-        screen: Feed
+        screen: Feed,
+        navigationOptions: {
+            tabBarIcon: ({ focused }) => (
+                <Icon
+                    name='home-outline'
+                    width={32}
+                    height={32}
+                    fill={focused ? '#111' : '#939393'}
+                />
+            )
+        }
     },
     Activity: {
-        screen: Activity
+        screen: Activity,
+        navigationOptions: {
+            tabBarIcon: ({ focused }) => (
+                <Icon
+                    name='heart-outline'
+                    width={32}
+                    height={32}
+                    fill={focused ? '#111' : '#939393'}
+                />
+            )
+        }
     },
     AddPost: {
-        screen: AddPost
+        screen: AddPost,
+        navigationOptions: {
+            tabBarIcon: ({ focused }) => (
+                <Icon
+                    name='plus-square-outline'
+                    width={32}
+                    height={32}
+                    fill={focused ? '#111' : '#939393'}
+                />
+            )
+        }
     },
     Profile: {
-        screen: Profile
+        screen: Profile,
+        navigationOptions: {
+            tabBarIcon: ({ focused }) => (
+                <Icon
+                    name='person-outline'
+                    width={32}
+                    height={32}
+                    fill={focused ? '#111' : '#939393'}
+                />
+            )
+        }
     },
     Search: {
-        screen: Search
+        screen: Search,
+        navigationOptions: {
+            tabBarIcon: ({ focused }) => (
+                <Icon
+                    name='search-outline'
+                    width={32}
+                    height={32}
+                    fill={focused ? '#111' : '#939393'}
+                />
+            )
+        }
     }
-})
+},
+{
+        tabBarOptions: {
+            showLabel: false
+        }
+    }
+)
 
 export default createAppContainer(TabNavigator)
