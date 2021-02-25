@@ -1,16 +1,12 @@
 import React from 'react';
-import { mapping, light as lightTheme} from '@eva-design/eva';
-import { ApplicationProvider, Layout, Text } from 'react-native-ui-kitten';
+import * as eva from '@eva-design/eva';
+import { ApplicationProvider, Layout, Text } from '@ui-kitten/components';
+import TabNavigator from "./navigation/TabNavigator";
 
-const ApplicationContent = () => (
-    <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>Welcome to Ui Kitten</Text>
-    </Layout>
-)
 
 const App = () => (
-    <ApplicationProvider mapping={mapping} theme={lightTheme}>
-        <ApplicationContent />
+    <ApplicationProvider {...eva} theme={eva.light}>
+            <TabNavigator />
     </ApplicationProvider>
 )
 
