@@ -9,9 +9,11 @@ import Feed from "../screens/Feed";
 import Profile from "../screens/Profile";
 import Search from "../screens/Search";
 
+import { FeedNavigator } from './StackNavigator';
+
 const TabNavigator = createBottomTabNavigator({
     Feed: {
-        screen: Feed,
+        screen: FeedNavigator,
         navigationOptions: {
             tabBarIcon: ({ focused }) => (
                 <Icon
