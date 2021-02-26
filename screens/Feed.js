@@ -26,7 +26,10 @@ const DATA = [
     }
 ]
 
+
 class Feed extends Component {
+
+
 
     render() {
 

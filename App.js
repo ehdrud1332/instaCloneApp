@@ -4,12 +4,16 @@ import { ApplicationProvider, Layout, Text, IconRegistry } from '@ui-kitten/comp
 import TabNavigator from "./navigation/TabNavigator";
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 
+import Firebase, { FirebaseProvider } from './utils';
+
 
 const App = () => (
     <>
         <IconRegistry icons={EvaIconsPack} />
         <ApplicationProvider {...eva} theme={eva.light}>
-            <TabNavigator />
+            <FirebaseProvider value={Firebase}>
+                <TabNavigator />
+            </FirebaseProvider>
         </ApplicationProvider>
     </>
 
